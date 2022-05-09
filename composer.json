@@ -1,0 +1,12 @@
+{
+  "name": "menchaca/328/pets2",
+  "authors": [
+    {
+      "name": "Cherie Menchaca and Gurnek Singh",
+      "email": "menchaca.cherie@student.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
