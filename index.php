@@ -39,8 +39,8 @@ $f3->route('GET|POST /order2', function($f3){
 $f3->route('GET|POST /summary', function($f3){
 
     echo var_dump($_POST);
-    $_SESSION['pet'] = $_POST['pet'];
-    $_SESSION['color'] = $_POST['color'];
+
+    $_SESSION['petname'] = $_POST['petname'];
 
 
     $view = new Template();
