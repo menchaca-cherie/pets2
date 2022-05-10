@@ -36,7 +36,7 @@ $f3->route('GET|POST /order2', function($f3){
     $view = new Template();
     echo $view->render('views/order2.html');
 });
-$f3->route('GET|POST /summary', function($f3){
+$f3->route('GET|POST /orderSummary', function($f3){
 
     echo var_dump($_POST);
 
@@ -44,7 +44,7 @@ $f3->route('GET|POST /summary', function($f3){
 
 
     $view = new Template();
-    echo $view->render('views/summary.html');
+    echo $view->render('views/orderSummary.html');
 });
 //Run fat free
 $f3->run();
