@@ -17,16 +17,16 @@ $f3 = Base::instance();
 $f3->route('GET /', function(){
     echo "My Pets";
     $view = new Template();
-    echo $view->render('views/home.html');
+    echo $view->render('views/pet-home.html');
 });
 $f3->route('GET /order', function(){
     //echo "Personal Information";
 
     $view = new Template();
-    echo $view->render('views/order.html');
+    echo $view->render('views/pet-order1.html');
 });
 
-$f3->route('GET|POST /order2', function($f3){
+$f3->route('GET|POST /order2', function(){
 
     echo var_dump($_POST);
     $_SESSION['pet'] = $_POST['pet'];
@@ -34,17 +34,31 @@ $f3->route('GET|POST /order2', function($f3){
 
 
     $view = new Template();
-    echo $view->render('views/order2.html');
+    echo $view->render('views/pet-order2.html');
 });
+
 $f3->route('GET|POST /orderSummary', function($f3){
-
-    echo var_dump($_POST);
-
-    $_SESSION['petname'] = $_POST['petname'];
-
 
     $view = new Template();
     echo $view->render('views/orderSummary.html');
+
+    //echo var_dump($_POST);
+
+    $_SESSION['pet'] = $_POST['pet'];
+    $_SESSION['color'] = $_POST['color'];
+
+
+
+});
+$f3->route('POST /orderSummary', function(){
+
+    $view = new Template();
+    echo $view->render('views/orderSummary.html');
+
+    //echo var_dump($_POST);
+
+    $_SESSION['petname'] = $_POST['petname'];
+
 });
 //Run fat free
 $f3->run();
