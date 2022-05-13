@@ -15,12 +15,12 @@ $f3 = Base::instance();
 
 //Define a default route /- root directory of the project
 $f3->route('GET /', function(){
-    echo "My Pets";
+    //echo "My Pets";
     $view = new Template();
     echo $view->render('views/pet-home.html');
 });
 $f3->route('GET /order', function(){
-    //echo "Personal Information";
+
 
     $view = new Template();
     echo $view->render('views/pet-order1.html');
