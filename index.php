@@ -28,7 +28,7 @@ $f3->route('GET /order', function(){
 
 $f3->route('GET|POST /order2', function(){
 
-    echo var_dump($_POST);
+    //echo var_dump($_POST);
     $_SESSION['pet'] = $_POST['pet'];
     $_SESSION['color'] = $_POST['color'];
 
@@ -39,25 +39,27 @@ $f3->route('GET|POST /order2', function(){
 
 $f3->route('GET|POST /orderSummary', function($f3){
 
-    $view = new Template();
-    echo $view->render('views/orderSummary.html');
+
 
     //echo var_dump($_POST);
 
     $_SESSION['pet'] = $_POST['pet'];
     $_SESSION['color'] = $_POST['color'];
 
-
+    $view = new Template();
+    echo $view->render('views/orderSummary.html');
 
 });
 $f3->route('POST /orderSummary', function(){
 
-    $view = new Template();
-    echo $view->render('views/orderSummary.html');
+
 
     //echo var_dump($_POST);
 
     $_SESSION['petname'] = $_POST['petname'];
+
+    $view = new Template();
+    echo $view->render('views/orderSummary.html');
 
 });
 //Run fat free
